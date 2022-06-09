@@ -1,4 +1,4 @@
-# Работа над проtктом Mesto
+# Работа над проектом Mesto
 
 Это проект создан на CreateReact App. [Create React App](https://github.com/facebook/create-react-app).
 
