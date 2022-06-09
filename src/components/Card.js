@@ -1,10 +1,17 @@
 function Card({card, onCardClick}) {
+   
    const handleClick = () => {
       onCardClick(card);
    }
-   return(
+
+   return (
       <li className="elements__card">
-         <img className="elements__item" src={card.link} alt={card.name} onClick={handleClick}/>
+         <img 
+            className="elements__item" 
+            src={card.link} 
+            alt={card.name} 
+            onClick={handleClick}
+         />
             <div className="elements__figcaption">
                <h3 className="elements__card-heading">{card.name}</h3>
             <div className="elements__counter">
