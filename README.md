@@ -16,4 +16,4 @@
 
 ### Ссылка на проект
 
- [Mesto-react](https://karina-kudrik.github.io/mesto-react/).
+ [Mesto-react](https://karina-kudrik.github.io/mesto-react).

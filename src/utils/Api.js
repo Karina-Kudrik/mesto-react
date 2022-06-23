@@ -62,6 +62,13 @@ export default class Api {
       }).then(this._handleError);
    }
 
+   changeLikeCardStatus(id, isLiked) {
+      return fetch(this._url + `cards/${id}/likes`, {
+         method: isLiked ? 'PUT' : 'DELETE',
+         headers: this._headers
+      }).then(this._handleError);
+   }
+
    setUserAvatar(data) {
       return fetch(this._url + 'users/me/avatar', {
          method: 'PATCH',
