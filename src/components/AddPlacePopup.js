@@ -6,8 +6,8 @@ function AddPlacePopup({isOpen, onClose, onAddCard, isLoading}) {
 
    const currentUser = useContext(CurrentUserContext);
 
-   const [place, setPlace] = useState();
-   const [link, setLink]= useState();
+   const [place, setPlace] = useState('');
+   const [link, setLink]= useState('');
 
    useEffect(() => {
       setPlace('');
