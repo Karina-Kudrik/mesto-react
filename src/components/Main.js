@@ -14,9 +14,8 @@ function Main ({onEditAvatar, onEditProfile, onAddPlace, onCardClick, cards, onC
                <img 
                   onClick={onEditAvatar} 
                   className="profile__avatar" 
-                  style={{ backgroundImage: `url(${currentUser.avatar})` }} 
-                  src={currentUser.avatar} 
-                  alt="Жак-Ив Кусто"
+                  src={currentUser.avatar}
+                  alt="Пользователь"
                />
             </div>
 

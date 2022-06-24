@@ -93,12 +93,28 @@ function App() {
       setIsConfirmDeletePopupOpen(false);
    }
 
+   const isOpen = isEditAvatarPopupOpen || isEditProfilePopupOpen || isAddPlacePopupOpen || selectedCard || isConfirmDeletePopupOpen
+
+   useEffect(() => {
+      function closeByEscape(evt) {
+         if(evt.key === 'Escape') {
+         closeAllPopups();
+         }
+      }
+      if(isOpen) {
+         document.addEventListener('keydown', closeByEscape);
+         return () => {
+         document.removeEventListener('keydown', closeByEscape);
+         }
+      }
+   }, [isOpen]) 
+
    function handleUpdateUser(data) {
       setIsLoading(true);
          api.setUserInfo(data)
             .then((res) => {
-            setCurrentUser(res);
-            closeAllPopups()
+               setCurrentUser(res);
+               closeAllPopups()
             })
             .catch((err) => console.log(err))
             .finally(() => setIsLoading(false));
@@ -107,23 +123,23 @@ function App() {
    function handleUserAvatar(data) {
       setIsLoading(true);
          api.setUserAvatar(data)
-         .then((res) => {
-            setCurrentUser(res);
-            closeAllPopups()
-         })
-         .catch((err) => console.log(err))
-         .finally(() => setIsLoading(false));
+            .then((res) => {
+               setCurrentUser(res);
+               closeAllPopups()
+            })
+            .catch((err) => console.log(err))
+            .finally(() => setIsLoading(false));
    }
 
    function handleAddCard(data) {
       setIsLoading(true);
          api.addCard(data)
-         .then((res) => {
-            setCards([res, ...cards]);
-            closeAllPopups()
-         })
-         .catch((err) => console.log(err))
-         .finally(() => setIsLoading(false));
+            .then((res) => {
+               setCards([res, ...cards]);
+               closeAllPopups()
+            })
+            .catch((err) => console.log(err))
+            .finally(() => setIsLoading(false));
    }
 
 
